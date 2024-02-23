@@ -1,10 +1,12 @@
-import { test, expect } from "vitest";
+import { test, expect, describe } from "vitest";
 import { sum } from "./sum";
 
-test("sum a , b", () => {
-  expect(sum(3, 4)).toEqual(7);
-});
+describe("sum function test group #1", () => {
+  test("sum a , b", () => {
+    expect(sum(3, 4)).toEqual(7);
+  });
 
-test("sum a , b , c", () => {
-  expect(sum(3, 4, 3)).toEqual(10);
+  test("sum a , b , c", () => {
+    expect(sum(3, 4, 3)).toEqual(10);
+  });
 });
