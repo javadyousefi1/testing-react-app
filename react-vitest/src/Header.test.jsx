@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 test("Header test #1", () => {
   render(<Header title="javad" />);
-  const textProp = screen.getByText(/javad/i);
+  const textProp = screen.getByText("javad");
   expect(textProp).toBeInTheDocument();
 });
 
@@ -18,4 +18,22 @@ test("Header test #3", () => {
   render(<Header title="javad" />);
   const toolTip = screen.getByTitle("999");
   expect(toolTip).toBeInTheDocument();
+});
+
+test("Header test #4", async () => {
+  render(<Header title="javad" />);
+  const p = await screen.findByRole("paragraph");
+  expect(p).toBeInTheDocument();
+});
+
+test("Header test #5", () => {
+  render(<Header title="javad" />);
+  const notExisted = screen.queryByText("not existed");
+  expect(notExisted).not.toBeInTheDocument();
+});
+
+test("Header test #6", () => {
+  render(<Header title="javad" />);
+  const li = screen.getAllByRole("listitem");
+  expect(li.length).toBe(3);
 });
