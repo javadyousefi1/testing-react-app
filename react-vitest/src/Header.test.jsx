@@ -37,3 +37,9 @@ test("Header test #6", () => {
   const li = screen.getAllByRole("listitem");
   expect(li.length).toBe(3);
 });
+
+test("Header test #7", () => {
+  render(<Header title="javad" />);
+  const testid83 = screen.getByTestId("testid83");
+  expect(testid83).toBeInTheDocument();
+});
