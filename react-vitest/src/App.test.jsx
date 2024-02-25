@@ -5,5 +5,5 @@ import App from "./App";
 test("App test", () => {
   render(<App />);
   screen.debug();
-  expect(screen.getByText(/react/i)).toBeInTheDocument();
+  expect(screen.getByText(/javad/i)).toBeInTheDocument();
 });
